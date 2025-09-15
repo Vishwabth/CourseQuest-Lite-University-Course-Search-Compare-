@@ -322,7 +322,7 @@ export default function SearchPage() {
                       onClick={() => toggle(c.course_id)}
                       className="primary"
                     >
-                      {ids.includes(c.id) ? 'Remove' : 'Add to compare'}
+                      {ids.includes(c.course_id) ? 'Remove' : 'Add to compare'}
                     </button>
                   </div>
                 </div>
