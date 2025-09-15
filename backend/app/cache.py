@@ -39,15 +39,24 @@ def set_cache(key: str, value: str, ttl: int = 60):
     cache_store[key] = value
 
 def clear_cache_prefix(prefix: str):
-    """Delete all cache keys with the given prefix and log it."""
+    """Delete all cache keys with the given prefix (Redis + fallback)."""
+    pattern = f"{prefix}*"
+    cleared = 0
+
+    # Redis
     if redis_client:
         try:
-            pattern = f"{prefix}*"
-            keys = redis_client.keys(pattern)
-            if keys:
-                redis_client.delete(*keys)
-                print(f"[Cache] Cleared {len(keys)} keys for prefix '{prefix}'")
-            else:
-                print(f"[Cache] No keys found for prefix '{prefix}'")
+            for key in redis_client.scan_iter(pattern):
+                redis_client.delete(key)
+                cleared += 1
+            logging.info(f"[Cache] Cleared {cleared} Redis keys for prefix '{prefix}'")
         except Exception as e:
             logging.warning(f"Redis error on clear_cache_prefix: {e}")
+
+    # Fallback (in-memory)
+    to_delete = [k for k in cache_store.keys() if k.startswith(prefix)]
+    for k in to_delete:
+        del cache_store[k]
+        cleared += 1
+
+    logging.info(f"[Cache] Cleared {cleared} total keys (Redis + memory) for prefix '{prefix}'")
