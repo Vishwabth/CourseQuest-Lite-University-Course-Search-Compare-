@@ -311,7 +311,10 @@ export default function SearchPage() {
                       <span className="badge">⭐ {c.rating.toFixed(1)}</span>{' '}
                       <span className="badge">
                         ₹ {c.tuition_fee_inr.toLocaleString()}
-                      </span>
+                      </span>{' '}
+                      <span className="badge">{c.credits} credits</span>{' '}
+                      <span className="badge">{c.duration_weeks} weeks</span>{' '}
+                      <span className="badge">📅 {c.year_offered}</span>
                     </div>
                   </div>
                   <div className="row">
