@@ -70,10 +70,14 @@ def compare(ids: str, db: Session = Depends(get_db)):
     if cached:
         return json.loads(cached)
 
-    items = compare_courses(db, id_list)
-    result = [serialize_course(i) for i in items]  # ✅ dicts
+    # 🔑 FIX: query using course_id instead of id
+    from ..models import Course
+    items = db.query(Course).filter(Course.course_id.in_(id_list)).all()
+
+    result = [serialize_course(i) for i in items]
     set_cache(cache_key, json.dumps(result), ttl=60)
     return result
+
 
 
 @router.get("/meta")
