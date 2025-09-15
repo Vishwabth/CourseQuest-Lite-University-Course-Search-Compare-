@@ -1,0 +1,21 @@
+course_id,course_name,department,level,delivery_mode,credits,duration_weeks,rating,tuition_fee_inr,year_offered
+1,Data Structures,CS,UG,offline,4,12,4.5,45000,2024
+2,Algorithms,CS,UG,hybrid,4,12,4.4,50000,2024
+3,Machine Learning,CS,PG,online,5,16,4.7,75000,2025
+4,Database Systems,CS,UG,offline,4,10,4.2,40000,2023
+5,Operating Systems,CS,UG,offline,4,12,4.1,42000,2024
+6,Networks,CS,UG,hybrid,3,10,4.0,38000,2023
+7,Linear Algebra,Math,UG,online,3,8,4.3,30000,2024
+8,Statistics,Math,UG,online,3,8,4.6,32000,2024
+9,Advanced Statistics,Math,PG,online,4,12,4.5,60000,2025
+10,Microeconomics,Economics,UG,offline,3,10,4.0,35000,2023
+11,Macroeconomics,Economics,UG,offline,3,10,4.1,36000,2024
+12,Development Economics,Economics,PG,hybrid,4,12,4.4,65000,2025
+13,Digital Marketing,Business,PG,online,4,8,4.2,55000,2025
+14,Accounting,Business,UG,offline,3,12,3.9,38000,2023
+15,Finance 101,Business,UG,offline,3,12,4.0,39000,2024
+16,Advanced Finance,Business,PG,online,4,12,4.5,70000,2025
+17,Intro to Psychology,Psychology,UG,offline,3,10,4.2,34000,2023
+18,Cognitive Science,Psychology,PG,hybrid,4,12,4.6,68000,2025
+19,AI Ethics,CS,PG,online,2,6,4.3,20000,2025
+20,Web Development,CS,UG,online,3,8,4.4,30000,2024
