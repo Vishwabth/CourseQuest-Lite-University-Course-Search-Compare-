@@ -77,14 +77,23 @@ def parse_question(q: str) -> Dict[str, Any]:
         out["max_fee"] = fee
 
     # ----- Rating -----
-    m = re.search(r"(?:rating|rated)\s*(?:>=|at least|above)?\s*(\d(?:\.\d)?)", ql)
-    if m:
-        out["min_rating"] = float(m.group(1))
-    else:
-        # "4+ rating"
-        m2 = re.search(r"(\d(?:\.\d)?)\s*\+?\s*(?:stars?|rating)", ql)
-        if m2:
-            out["min_rating"] = float(m2.group(1))
+        # rating
+    # Case 1: "under/below/less than rating X"
+    m_under = re.search(r"(?:rating|rated)\s*(?:<=?|under|below|less than)\s*(\d(?:\.\d)?)", ql)
+    if m_under:
+        try:
+            out["max_rating"] = float(m_under.group(1))
+        except:
+            pass
+    
+    # Case 2: "rating 4+" or "rating above 4"
+    m_above = re.search(r"(?:rating|rated)?\s*(?:>=|at least|above)?\s*(\d(?:\.\d)?)\+?", ql)
+    if m_above:
+        try:
+            out["min_rating"] = float(m_above.group(1))
+        except:
+            pass
+
 
     # ----- Level -----
     for k, v in LEVEL_MAP.items():
