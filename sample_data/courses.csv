@@ -1,21 +1,62 @@
 course_id,course_name,department,level,delivery_mode,credits,duration_weeks,rating,tuition_fee_inr,year_offered
-1,Data Structures,CS,UG,offline,4,12,4.5,45000,2024
-2,Algorithms,CS,UG,hybrid,4,12,4.4,50000,2024
-3,Machine Learning,CS,PG,online,5,16,4.7,75000,2025
-4,Database Systems,CS,UG,offline,4,10,4.2,40000,2023
-5,Operating Systems,CS,UG,offline,4,12,4.1,42000,2024
-6,Networks,CS,UG,hybrid,3,10,4.0,38000,2023
-7,Linear Algebra,Math,UG,online,3,8,4.3,30000,2024
-8,Statistics,Math,UG,online,3,8,4.6,32000,2024
-9,Advanced Statistics,Math,PG,online,4,12,4.5,60000,2025
-10,Microeconomics,Economics,UG,offline,3,10,4.0,35000,2023
-11,Macroeconomics,Economics,UG,offline,3,10,4.1,36000,2024
-12,Development Economics,Economics,PG,hybrid,4,12,4.4,65000,2025
-13,Digital Marketing,Business,PG,online,4,8,4.2,55000,2025
-14,Accounting,Business,UG,offline,3,12,3.9,38000,2023
-15,Finance 101,Business,UG,offline,3,12,4.0,39000,2024
-16,Advanced Finance,Business,PG,online,4,12,4.5,70000,2025
-17,Intro to Psychology,Psychology,UG,offline,3,10,4.2,34000,2023
-18,Cognitive Science,Psychology,PG,hybrid,4,12,4.6,68000,2025
-19,AI Ethics,CS,PG,online,2,6,4.3,20000,2025
-20,Web Development,CS,UG,online,3,8,4.4,30000,2024
+38,Electromagnetism,Physics,UG,offline,5,10,3.7,50000,2024
+25,Advanced Finance,Business,UG,hybrid,3,8,4.0,65000,2023
+26,Management,Business,UG,hybrid,3,12,3.7,50000,2024
+37,Classical Mechanics,Physics,PG,online,4,16,4.3,40000,2025
+35,Evolutionary Biology,Biology,PG,online,4,10,3.8,70000,2025
+40,Organic Chemistry,Chemistry,PG,hybrid,5,10,4.0,20000,2024
+5,Operating Systems,CS,UG,offline,3,12,4.7,75000,2023
+13,Advanced Statistics,Math,PG,offline,4,8,4.4,45000,2023
+9,Cyber Security,CS,UG,online,3,8,4.2,30000,2023
+4,Database Systems,CS,PG,hybrid,5,12,4.0,75000,2023
+7,AI Ethics,CS,UG,hybrid,3,16,4.6,50000,2023
+28,Intro to Psychology,Psychology,UG,online,5,12,3.9,20000,2024
+32,Genetics,Biology,PG,hybrid,2,16,4.7,60000,2025
+20,Econometrics,Economics,UG,online,2,16,5.0,20000,2024
+18,Macroeconomics,Economics,UG,online,4,6,3.7,40000,2023
+14,Calculus,Math,UG,online,2,6,4.9,65000,2025
+41,Inorganic Chemistry,Chemistry,PG,offline,3,8,4.8,30000,2023
+16,Probability,Math,UG,online,4,16,4.9,65000,2025
+10,Cloud Computing,CS,PG,offline,5,16,4.8,65000,2025
+17,Microeconomics,Economics,PG,hybrid,5,6,4.1,70000,2025
+31,Social Psychology,Psychology,UG,offline,2,6,4.1,60000,2023
+27,Entrepreneurship,Business,PG,hybrid,5,8,4.7,40000,2024
+1,Data Structures,CS,UG,hybrid,2,6,3.7,50000,2025
+30,Behavioral Neuroscience,Psychology,PG,hybrid,3,16,4.7,50000,2024
+42,Physical Chemistry,Chemistry,PG,online,5,10,3.8,35000,2023
+6,Networks,CS,UG,offline,5,10,4.3,60000,2025
+12,Statistics,Math,UG,online,2,12,3.8,40000,2024
+33,Molecular Biology,Biology,PG,hybrid,2,6,4.9,30000,2025
+2,Algorithms,CS,PG,online,3,10,3.7,70000,2025
+43,Analytical Chemistry,Chemistry,PG,online,3,16,4.0,20000,2025
+22,Digital Marketing,Business,PG,offline,2,10,4.0,65000,2024
+3,Machine Learning,CS,UG,hybrid,3,6,4.3,60000,2023
+34,Biochemistry,Biology,PG,hybrid,3,10,4.3,40000,2023
+24,Finance 101,Business,UG,offline,2,16,3.6,35000,2025
+36,Quantum Mechanics,Physics,PG,offline,4,10,3.8,45000,2023
+11,Linear Algebra,Math,PG,hybrid,4,6,4.7,65000,2025
+23,Accounting,Business,PG,online,5,6,3.6,40000,2023
+19,Development Economics,Economics,PG,hybrid,4,12,3.7,60000,2025
+21,Game Theory,Economics,PG,offline,4,6,4.0,75000,2023
+8,Web Development,CS,UG,hybrid,4,12,4.4,45000,2025
+15,Discrete Math,Math,UG,offline,2,6,4.8,20000,2025
+29,Cognitive Science,Psychology,PG,online,3,8,4.2,35000,2023
+39,Thermodynamics,Physics,UG,hybrid,2,16,4.9,65000,2024
+44,Philosophy of Mind,Philosophy,PG,online,3,8,4.1,30000,2023
+45,Modern Literature,Literature,UG,offline,4,12,3.8,25000,2024
+46,World History,History,UG,hybrid,3,10,3.9,28000,2025
+47,Environmental Science,Environmental,UG,online,4,14,4.5,32000,2024
+48,Data Analytics,Statistics,PG,hybrid,5,12,4.6,70000,2025
+49,Civil Engineering Basics,Engineering,UG,offline,4,16,3.7,50000,2023
+50,Electrical Circuits,Engineering,UG,offline,3,12,4.0,45000,2024
+51,Mechanical Design,Engineering,PG,hybrid,5,14,4.2,75000,2025
+52,Robotics,CS,PG,online,4,12,4.8,85000,2025
+53,Philosophy of Science,Philosophy,UG,offline,2,8,3.6,20000,2023
+54,Artificial Intelligence,CS,PG,online,5,16,4.9,90000,2025
+55,International Relations,Political Science,PG,hybrid,4,12,4.3,60000,2024
+56,Public Policy,Political Science,UG,offline,3,10,3.9,35000,2024
+57,Sociology of Education,Sociology,UG,online,3,12,4.0,28000,2023
+58,Anthropology Basics,Anthropology,UG,hybrid,4,10,3.7,30000,2025
+59,Philosophy of Technology,Philosophy,PG,online,3,8,4.2,40000,2025
+60,Digital Humanities,Humanities,PG,hybrid,4,12,4.4,55000,2024
+
