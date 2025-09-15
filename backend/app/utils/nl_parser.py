@@ -47,7 +47,6 @@ DEPARTMENT_MAP = {
     "political": "Political Science",
 }
 
-
 def parse_money(text: str) -> Optional[int]:
     text = text.replace(",", " ").lower()
     # Match "under 50k", "less than 1.5 lakh"
@@ -68,7 +67,6 @@ def parse_money(text: str) -> Optional[int]:
             return int(float(m2.group(1)))
     return None
 
-
 def parse_question(q: str) -> Dict[str, Any]:
     ql = q.lower()
     out: Dict[str, Any] = {}
@@ -80,7 +78,7 @@ def parse_question(q: str) -> Dict[str, Any]:
 
     # ----- Rating -----
     # Case 1: "under/below/less than rating X"
-    m_under = re.search(r"(?:rating|rated)\s*(?:<=?|under|below|less than)\s*(\d(?:\.\d)?)", ql)
+    m_under = re.search(r"(?:rating|rated)\s*(?:<=?|under|below|less than)\s*(\d+(?:\.\d)?)", ql)
     if m_under:
         try:
             out["max_rating"] = float(m_under.group(1))
@@ -88,7 +86,7 @@ def parse_question(q: str) -> Dict[str, Any]:
             pass
 
     # Case 2: "rating 4+" or "rating above 4"
-    m_above = re.search(r"(?:rating|rated)?\s*(?:>=|at least|above)?\s*(\d(?:\.\d)?)\s*\+?", ql)
+    m_above = re.search(r"(?:rating|rated)?\s*(?:>=|at least|above)?\s*(\d+(?:\.\d)?)\+?", ql)
     if m_above:
         try:
             out["min_rating"] = float(m_above.group(1))
