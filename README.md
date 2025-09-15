@@ -1,6 +1,23 @@
 # CourseQuest Lite – University Course Search & Compare
+## 🏗 Architecture
+- **Frontend**: React + TypeScript  
+  - `SearchPage`: Filters + results  
+  - `ComparePage`: Side-by-side table  
+  - `AskPage`: Natural Language interface  
+  - State persisted in `localStorage` for course comparison  
 
-Production-ready sample for the take-home assignment.
+- **Backend**: FastAPI  
+  - `/api/courses`: Filtered search with pagination  
+  - `/api/compare`: Compare by IDs  
+  - `/api/ingest`: CSV upload (upsert into DB)  
+  - `/api/ask`: Natural Language → structured filters (regex parser)  
+  - Uses SQLAlchemy ORM + PostgreSQL 
+  - Redis cache (fallback: in-memory dict)  
+
+- **Data**: `courses.csv` ingested via API  
+  - Schema: `course_id, course_name, department, level, delivery_mode, credits, duration_weeks, rating, tuition_fee_inr, year_offered`
+
+---
 
 ## Features
 
@@ -57,11 +74,36 @@ Open:
 ## Project Structure
 
 ```
-backend/
-frontend/
-sample_data/
-.devcontainer/
-docker-compose.yml
+coursequest-lite/
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── routers/
+│   │   │   ├── courses.py
+│   │   │   ├── ingest.py
+│   │   │   └── ask.py
+│   │   ├── utils/nl_parser.py
+│   │   ├── schemas.py
+│   │   ├── models.py
+│   │   ├── database.py
+│   │   └── cache.py
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── src/pages/SearchPage.tsx
+│   ├── src/pages/ComparePage.tsx
+│   ├── src/pages/AskPage.tsx
+│   ├── src/api.ts
+│   ├── package.json
+│   └── Dockerfile
+│
+├── sample_data/
+│   └── courses.csv
+│
+├── docker-compose.yml
+├── README.md
+
 ```
 
 ## Tests
@@ -76,3 +118,21 @@ pytest -q
 
 - CORS is enabled for origins in `.env`.
 - For production you can put the backend behind a reverse proxy and serve frontend via nginx (already used).
+- Redis is optional; if unavailable, the backend uses in-memory caching.
+- DB: PostgreSQL (DATABASE_URL=postgresql://postgres:password@db:5432/coursequest).
+- SQLite was only used for testing.
+
+
+## Links
+- 📂 Repo: https://github.com/Vishwabth/CourseQuest-Lite-University-Course-Search-Compare-.git
+- 🌐 Demo (Render): https://coursequest-lite-university-course.onrender.com/
+
+### Sample CSV schema
+`course_id, course_name, department, level, delivery_mode, credits, duration_weeks, rating, tuition_fee_inr, year_offered`
+
+## Design Notes
+- **Parser**: Regex-based to keep it deterministic and transparent (no LLM dependency).
+- **Comparison state**: Stored in `localStorage` → simple, persists across reloads.
+- **Caching**: Redis with in-memory fallback for predictable dev/test runs.
+- **DB**: PostgreSQL.
+
